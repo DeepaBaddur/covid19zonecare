@@ -1,78 +1,63 @@
-package com.cognizant.callforcode.zonecare.entity;
+package com.wardinfo.rest.webservices.restfulwebservices.Entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "ward_details")
 public class WardDetails {
 	
-	//define fields
-	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="pincode_wardno")
-	private String pincodeWardNo;
+	private int pincode_ward;
+	private String name;
+	private int age;
+	private String address;
+	private String contactno;
 	
-	@Column(name = "name")
-	String name;
-	  
-	@Column(name = "age")
-	String age;
-	
-	@Column(name = "address")
-	String address;
-	
-	@Column(name = "contact_no")
-	String contactNo;
-
-	public String getPincodeWardNo() {
-		return pincodeWardNo;
+	public WardDetails()
+	{
+		
 	}
-
-	public void setPincodeWardNo(String pincodeWardNo) {
-		this.pincodeWardNo = pincodeWardNo;
+	public WardDetails(int pincode_ward, String name, int age, String address, String contactno) {
+		super();
+		this.pincode_ward = pincode_ward;
+		this.name = name;
+		this.age = age;
+		this.address = address;
+		this.contactno = contactno;
 	}
-
+	public int getPincode_ward() {
+		return pincode_ward;
+	}
+	public void setPincode_ward(int pincode_ward) {
+		this.pincode_ward = pincode_ward;
+	}
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public String getAge() {
+	public int getAge() {
 		return age;
 	}
-
-	public void setAge(String age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
-
 	public String getAddress() {
 		return address;
 	}
-
 	public void setAddress(String address) {
 		this.address = address;
 	}
-
-	public String getContactNo() {
-		return contactNo;
+	public String getContactno() {
+		return contactno;
 	}
-
-	public void setContactNo(String contactNo) {
-		this.contactNo = contactNo;
+	public void setContactno(String contactno) {
+		this.contactno = contactno;
 	}
+	
+	
+	
+	
 
-	@Override
-	public String toString() {
-		return "WardDetails [pincodeWardNo=" + pincodeWardNo + ", name=" + name + ", age=" + age + ", address="
-				+ address + ", contactNo=" + contactNo + "]";
-	}
 }
