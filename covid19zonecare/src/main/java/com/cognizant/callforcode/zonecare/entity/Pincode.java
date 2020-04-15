@@ -7,7 +7,8 @@ import javax.persistence.Id;
 public class Pincode {
 	
 	@Id
-	private int pincode_ward;
+	private int Id;
+	private String pincode_ward;
 	private int pincode;
 	private int ward;
 	
@@ -16,28 +17,42 @@ public class Pincode {
 		
 	}	
 	
-	public Pincode(int pincode_ward, int pincode, int ward) {
+	public Pincode(int id, String pincode_ward, int pincode, int ward) {
 		super();
+		Id = id;
 		this.pincode_ward = pincode_ward;
 		this.pincode = pincode;
 		this.ward = ward;
 	}
+	
+	public int getId() {
+		return Id;
+	}
+	
+	public void setId(int id) {
+		Id = id;
+	}
 		
-	public int getPincode_ward() {
+	public String getPincode_ward() {
 		return pincode_ward;
 	}
-	public void setPincode_ward(int pincode_ward) {
+	
+	public void setPincode_ward(String pincode_ward) {
 		this.pincode_ward = pincode_ward;
 	}
+	
 	public int getPincode() {
 		return pincode;
 	}
+	
 	public void setPincode(int pincode) {
 		this.pincode = pincode;
 	}
+	
 	public int getWard() {
 		return ward;
 	}
+	
 	public void setWard(int ward) {
 		this.ward = ward;
 	}
