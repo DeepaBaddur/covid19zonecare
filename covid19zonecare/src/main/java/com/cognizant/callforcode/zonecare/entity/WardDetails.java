@@ -1,4 +1,4 @@
-package com.wardinfo.rest.webservices.restfulwebservices.Entity;
+package com.cognizant.callforcode.zonecare.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
