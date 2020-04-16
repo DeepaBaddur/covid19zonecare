@@ -49,9 +49,9 @@ public class CovidDataRestController {
 		return pinDataService.findAll();
 	}
 	
-	@GetMapping("/pincodes/{pincode}")
-	public Optional<Pincode>retrievePincodeByPinward(@PathVariable String pincode) {
-		return pinDataService.findById(pincode);
+	@GetMapping("/pincodes/{pinward}")
+	public Optional<Pincode>retrievePincodeByPinward(@PathVariable String pinward) {
+		return pinDataService.findById(pinward);
 		
 	}
 	

@@ -8,8 +8,8 @@ public class Pincode {
 	
 	
 	private int Id;
-	private String pincode_ward;
 	@Id
+	private String pincode_ward;	
 	private String pincode;
 	private String ward;
 	
