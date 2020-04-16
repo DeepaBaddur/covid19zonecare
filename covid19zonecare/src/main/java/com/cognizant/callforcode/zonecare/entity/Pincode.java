@@ -6,9 +6,10 @@ import javax.persistence.Id;
 @Entity
 public class Pincode {
 	
-	@Id
+	
 	private int Id;
-	private String pincode_ward;
+	@Id
+	private String pincode_ward;	
 	private String pincode;
 	private String ward;
 	
