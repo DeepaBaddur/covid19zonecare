@@ -1,9 +1,12 @@
 package com.cognizant.callforcode.zonecare.rest;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cognizant.callforcode.zonecare.dao.CovidCountDataRepository;
@@ -16,6 +19,7 @@ import com.cognizant.callforcode.zonecare.entity.WardDetails;
 import com.cognizant.callforcode.zonecare.entity.WardServices;
 
 @RestController
+@RequestMapping(path="/api")
 public class CovidDataRestController {
 	
 	@Autowired
@@ -34,9 +38,21 @@ public class CovidDataRestController {
 	public List<CovidCount> retrieveAllCovidCounts() {
 		return covidDataService.findAll();
 	}
+	
+	@GetMapping("/covidcounts/{pinward}")
+	public Optional<CovidCount> retrieveCovidCountByPinward(@PathVariable String pinward) {
+		return covidDataService.findById(pinward);
+	}	
+	
 	@GetMapping("/pincodes")
 	public List<Pincode> retrieveAllPincodes() {
 		return pinDataService.findAll();
+	}
+	
+	@GetMapping("/pincodes/{pincode}")
+	public Optional<Pincode>retrievePincodeByPinward(@PathVariable String pincode) {
+		return pinDataService.findById(pincode);
+		
 	}
 	
 	@GetMapping("/warddetails")
@@ -44,9 +60,20 @@ public class CovidDataRestController {
 		return wardDataService.findAll();
 	}
 	
+	
+	@GetMapping("/warddetails/{pinward}")
+	public Optional<WardDetails> retrieveWardDetailByPinward(@PathVariable String pinward) {
+		return wardDataService.findById(pinward);
+	}
+	
 	@GetMapping("/wardservices")
 	public List<WardServices> retrieveAllWardServices() {
 		return wardServicesService.findAll();
+	}
+	
+	@GetMapping("/wardservices/{pinward}")
+	public Optional<WardServices> retrieveWardServiceByPinward(@PathVariable String pinward) {
+		return wardServicesService.findById(pinward);
 	}
 	
 	
