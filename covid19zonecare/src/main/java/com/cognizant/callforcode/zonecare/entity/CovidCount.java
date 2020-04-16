@@ -1,5 +1,4 @@
 package com.cognizant.callforcode.zonecare.entity;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -9,7 +8,7 @@ public class CovidCount {
 	
 	
 	@Id
-	private int pincode_ward;	
+	private String pincode_ward;	
 	private int active;
 	private int recovered;	
 	private int deceased;
@@ -18,9 +17,9 @@ public class CovidCount {
 	public CovidCount()
 	{
 		
-	}	
-	
-	public CovidCount(int pincode_ward, int active, int recovered, int deceased, int quarantine) {
+	}
+
+	public CovidCount(String pincode_ward, int active, int recovered, int deceased, int quarantine) {
 		super();
 		this.pincode_ward = pincode_ward;
 		this.active = active;
@@ -28,12 +27,12 @@ public class CovidCount {
 		this.deceased = deceased;
 		this.quarantine = quarantine;
 	}
-	
-	public int getPincode_ward() {
+
+	public String getPincode_ward() {
 		return pincode_ward;
 	}
 
-	public void setPincode_ward(int pincode_ward) {
+	public void setPincode_ward(String pincode_ward) {
 		this.pincode_ward = pincode_ward;
 	}
 
@@ -67,7 +66,9 @@ public class CovidCount {
 
 	public void setQuarantine(int quarantine) {
 		this.quarantine = quarantine;
-	}
+	}	
+	
+	
 		
 
 }

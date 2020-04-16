@@ -7,7 +7,7 @@ import javax.persistence.Id;
 public class WardServices {
 	
 	@Id
-	private int pincode_ward;
+	private String pincode_ward;
 	private String category;
 	private String shopname;
 	private String contactperson;
@@ -18,8 +18,8 @@ public class WardServices {
 	{
 		
 	}
-	
-	public WardServices(int pincode_ward, String category, String shopname, String contactperson, String contactno,
+
+	public WardServices(String pincode_ward, String category, String shopname, String contactperson, String contactno,
 			String isdelivery) {
 		super();
 		this.pincode_ward = pincode_ward;
@@ -30,13 +30,11 @@ public class WardServices {
 		this.isdelivery = isdelivery;
 	}
 
-
-
-	public int getPincode_ward() {
+	public String getPincode_ward() {
 		return pincode_ward;
 	}
 
-	public void setPincode_ward(int pincode_ward) {
+	public void setPincode_ward(String pincode_ward) {
 		this.pincode_ward = pincode_ward;
 	}
 
@@ -56,11 +54,11 @@ public class WardServices {
 		this.shopname = shopname;
 	}
 
-	public String getcontactperson() {
+	public String getContactperson() {
 		return contactperson;
 	}
 
-	public void setcontactperson(String contactperson) {
+	public void setContactperson(String contactperson) {
 		this.contactperson = contactperson;
 	}
 
@@ -72,12 +70,15 @@ public class WardServices {
 		this.contactno = contactno;
 	}
 
-	public String getisdelivery() {
+	public String getIsdelivery() {
 		return isdelivery;
 	}
 
-	public void setisdelivery(String isdelivery) {
+	public void setIsdelivery(String isdelivery) {
 		this.isdelivery = isdelivery;
 	}
+	
+	
+	
 	
 }
