@@ -47,10 +47,6 @@ INSERT INTO pincode(`Id`,`pincode_ward`, `pincode`, `ward`) VALUES ('17','560080
 INSERT INTO pincode(`Id`,`pincode_ward`, `pincode`, `ward`) VALUES ('18','560080Ward33', '560082', 'Ward03');
 
 
-
-
-
-
 INSERT INTO ward_details( `pincode_ward`, `Name`, `Age`, `Address`, `Contactno`) VALUES ('560004Ward01', 'Kamala', '56', 'MG road, BASAVANAGUDI, Bangalore', '7894856975');
 INSERT INTO ward_details( `pincode_ward`, `Name`, `Age`, `Address`, `Contactno`) VALUES ('560004Ward02', 'Kalyan', '42', 'KH road, BASAVANAGUDI , Bangalore', '9894873233');
 INSERT INTO ward_details( `pincode_ward`, `Name`, `Age`, `Address`, `Contactno`) VALUES ('560004Ward03', 'Akshay', '27', 'RK road, BASAVANAGUDI, Bangalore', '6894946996');
@@ -76,30 +72,29 @@ INSERT INTO ward_details( `pincode_ward`, `Name`, `Age`, `Address`, `Contactno`)
 INSERT INTO ward_details( `pincode_ward`, `Name`, `Age`, `Address`, `Contactno`) VALUES ('560080Ward35', 'Gopal', '49', 'HT road, SADASHIVANAGAR, Bangalore', '7765186667');
 
 
-
-
-INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560004Ward01', 'Grocery', 'BigBazar', 'Suresh', '8756912623', 'No');
-INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560004Ward02', 'Medical', 'DeviMedicals', 'Ramesh', '8745962369', 'No');
+INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560004Ward01', 'basic_need', 'BigBazar', 'Suresh', '8756912623', 'No');
+INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560004Ward02', 'basic_need', 'DeviMedicals', 'Ramesh', '8745962369', 'No');
 INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560004Ward03', 'gas_agency', 'Indian Gas-Agency', 'Chandrashekhar', '6874593250', 'Yes');
 INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560004Ward04', 'take_away', 'HotelUdupi', 'Dileep', '8459671236', 'Yes');
 INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560004Ward05', 'general_physician', 'Docters Clinic', 'Dr.Anil', '6974530123', 'No');
 
 INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560083Ward11', 'take_away', 'HotelChutney', 'Manoj', '9447596123', 'Yes');
-INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560083Ward12', 'Medical', 'ApolloMedicals', 'Sandeep', '9887459658', 'No');
-INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560083Ward13', 'Grocery', 'More', 'Bhaskar', '9410325689', 'No');
+INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560083Ward12', 'basic_need', 'ApolloMedicals', 'Sandeep', '9887459658', 'No');
+INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560083Ward13', 'basic_need', 'More', 'Bhaskar', '9410325689', 'No');
 INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560083Ward14', 'gas_agency', 'Bharath Gas-Agency', 'Kiran', '9880674859', 'Yes');
 INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560083Ward15', 'general_physician', 'LifeCare-Clinic', 'Dr Kumar', '9663025896', 'No');
 
 INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560002Ward21', 'take_away', 'Dominos', 'Amar', '8860125875', 'Yes');
-INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560002Ward22', 'Medical', 'SupremeMedicals', 'Lohit', '9874591237', 'No');
-INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560002Ward23', 'Grocery', 'M-Stores', 'Ramanna', '9626547777', 'Yes');
+INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560002Ward22', 'basic_need', 'SupremeMedicals', 'Lohit', '9874591237', 'No');
+INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560002Ward23', 'basic_need', 'M-Stores', 'Ramanna', '9626547777', 'Yes');
 INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560002Ward24', 'gas_agency', 'Ravi Gas-Agency', 'Anush', '9638527415', 'Yes');
 INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560002Ward25', 'general_physician', 'Krishna Clinic', 'Dr.Smitha', '9874444446', 'No');
 
-INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560080Ward31', 'Grocery', 'R-Stores', 'Sharath', '9636942034', 'Yes');
+INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560080Ward31', 'basic_need', 'R-Stores', 'Sharath', '9636942034', 'Yes');
 INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560080Ward32', 'general_physician', 'ShettyClinic', 'Dr.KShetty', '9648579670', 'No');
-INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560080Ward33', 'Medical', 'LaxmiMedicals', 'Shantha', '9872683330', 'No');
+INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560080Ward33', 'basic_need', 'LaxmiMedicals', 'Shantha', '9872683330', 'No');
 INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560080Ward34', 'gas_agency', 'Gopi Gas-Agency', 'Bharath', '8794563210', 'Yes');
 INSERT INTO ward_services(`pincode_ward`, `category`, `shopname`, `contactperson`, `contactno`, `isdelivery`) VALUES ('560080Ward35', 'take_away', 'HotelTaj', 'Sachin', '9816005887', 'Yes');
+
 
 
