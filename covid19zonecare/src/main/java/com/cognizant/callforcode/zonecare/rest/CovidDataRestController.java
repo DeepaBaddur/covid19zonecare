@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -55,11 +54,6 @@ public class CovidDataRestController {
 		return pinDataService.findById(pinward);
 		
 	}
-	
-	@GetMapping(path = "/pincodes/{pincode}", produces = {MediaType.APPLICATION_JSON_VALUE})
-	public Optional<Pincode>retrieveWardsByPincode(@PathVariable String pincode) {
-		return pinDataService.findByPincode(pincode);
-	} 
 	
 	@GetMapping("/warddetails")
 	public List<WardDetails> retrieveAllWardDetails() {
