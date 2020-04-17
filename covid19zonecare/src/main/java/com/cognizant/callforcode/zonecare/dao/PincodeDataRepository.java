@@ -10,7 +10,7 @@ import com.cognizant.callforcode.zonecare.entity.Pincode;
 
 public interface PincodeDataRepository extends JpaRepository<Pincode, String>{
 
-	@Query("SELECT p FROM Pincode WHERE p.pincode = :pincode")
+	@Query("SELECT p FROM Pincode p WHERE p.pincode = :pincode")
 	Optional<Pincode> findByPincode(@Param("pincode") String pincode);
 
 }
