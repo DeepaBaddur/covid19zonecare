@@ -56,7 +56,7 @@ public class CovidDataRestController {
 		
 	}
 	
-	@GetMapping(path = "/pincodes/{pincode}", produces = {MediaType.APPLICATION_JSON_VALUE})
+	@GetMapping(path = "/pincode/{pincode}", produces = {MediaType.APPLICATION_JSON_VALUE})
 	public Optional<Pincode>retrieveWardsByPincode(@PathVariable String pincode) {
 		return pinDataService.findByPincode(pincode);
 	} 
