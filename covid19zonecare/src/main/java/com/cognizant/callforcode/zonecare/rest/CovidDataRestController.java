@@ -41,8 +41,8 @@ public class CovidDataRestController {
 	}
 	
 	@GetMapping("/covidcounts/{pinward}")
-	public Optional<CovidCount> retrieveCovidCountByPinward(@PathVariable String pinward) {
-		return covidDataService.findById(pinward);
+	public List<CovidCount> retrieveCovidCountByPinward(@PathVariable String pinward) {
+		return covidDataService.findByCountPincode(pinward);
 	}	
 	
 	@GetMapping("/pincodes")
@@ -56,15 +56,14 @@ public class CovidDataRestController {
 	}
 	
 	@GetMapping(path = "/wards/{pincode}", produces = {MediaType.APPLICATION_JSON_VALUE})
-	public Optional<Pincode> retrieveWardsByPincode(@PathVariable String pincode){
+	public List<Pincode> retrieveWardsByPincode(@PathVariable String pincode){
 		return pinDataService.findByPincode(pincode);
 	}
 	
 	@GetMapping("/warddetails")
 	public List<WardDetails> retrieveAllWardDetails() {
 		return wardDataService.findAll();
-	}
-	
+	}	
 	
 	@GetMapping("/warddetails/{pinward}")
 	public Optional<WardDetails> retrieveWardDetailByPinward(@PathVariable String pinward) {
@@ -77,8 +76,8 @@ public class CovidDataRestController {
 	}
 	
 	@GetMapping("/wardservices/{pinward}")
-	public Optional<WardServices> retrieveWardServiceByPinward(@PathVariable String pinward) {
-		return wardServicesService.findById(pinward);
+	public List<WardServices> retrieveWardServiceByPinward(@PathVariable String pinward) {
+		return wardServicesService.findWardServicesByPincode(pinward);
 	}
 	
 	
