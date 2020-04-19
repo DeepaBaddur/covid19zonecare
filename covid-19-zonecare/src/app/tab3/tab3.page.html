@@ -1,0 +1,101 @@
+
+<ion-content [fullscreen]="true">
+  <h5 class="ion-padding-start" >Search with zipcode or location </h5>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size-xs="12" size-sm="12" size-md="5" size-lg="5">
+        <ion-searchbar showCancelButton="focus" class="ios" [ngModel]="pincode" placeholder="Enter the PinCode" (ionChange)="onInput($event)" type="number"> </ion-searchbar>
+        <p style="color: red;" *ngIf="!isvalid">Invalid Pincode</p>
+
+
+      </ion-col>
+      <ion-col size-xs="12" size-sm="12" size-md="5" size-lg="5" *ngIf="isWardAvail">
+        <ion-item class="dropdown">
+          <ion-label>Select Ward</ion-label>
+          <!-- <ion-select value="Ward 1" okText="Ok" cancelText="Cancel">
+            <ion-select-option value="Ward 1">Ward 1</ion-select-option>
+            <ion-select-option value="Ward 2">Ward 2</ion-select-option>
+            <ion-select-option value="Ward 3">Ward 3</ion-select-option>
+            <ion-select-option value="Ward 4">Ward 4</ion-select-option>
+          </ion-select> -->
+          <ion-select (ionChange)="selectWard($event)">
+            <ion-select-option *ngFor="let item of countdata">{{item.ward}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="12" size-md="2" size-lg="2">
+        <ion-button expand="block" class="ww-b" (click)="getwardlist()">Search</ion-button>
+
+
+
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+  <div *ngIf="response">
+  <ion-grid >
+  <!-- <div class="p22"></div> -->
+  <ion-segment (ionChange)="segmentChanged($event)" value="3" class="plt-iphone plt-ios plt-phablet plt-mobile ios"
+    mode="ios">
+    <ion-segment-button value="3">
+      <ion-label>General Physicians</ion-label>
+    </ion-segment-button>
+   
+   
+    
+    <ion-segment-button value="4">
+      <ion-label>Take Away Points</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="2">
+      <ion-label>Gas Agencies</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="1">
+      <ion-label>Basic Needs</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <h5 class="ion-padding" *ngIf="noDatafound">No Record Found</h5>
+
+  <div class="p22"></div>
+  </ion-grid>
+
+
+
+
+  <ion-card *ngFor="let list of lists">
+  <ion-list>
+    
+  <!-- <ion-list-header class="plt-iphone plt-ios plt-phablet plt-mobile ios" mode="ios" style="color: #eb445a;" >asdfdsf</ion-list-header> -->
+
+    <ion-item-divider>
+      <ion-label class="f19" color="dark" >
+        <b>{{list.shopname}}</b>
+       
+      <!-- <ion-badge color="danger" slot="end" style="    position: relative; top: 3px; margin-left: 10px;">Delivery Available</ion-badge> -->
+      </ion-label>
+      <ion-chip color="danger" *ngIf="list.isdelivery == 'yes'" slot="end">
+        <ion-label>Delivery Available</ion-label>
+      </ion-chip>
+    </ion-item-divider>
+    <ion-item lines="none">
+
+      <ion-label>
+        {{list.contactperson}}
+      </ion-label>
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+    </ion-item>
+    <ion-item lines="none">
+
+      <ion-label>
+       <a href="tel:1234567891">{{list.contactno}}</a> 
+      </ion-label>
+      <ion-icon name="call-outline" slot="start"></ion-icon>
+    </ion-item>
+  </ion-list>
+  </ion-card>
+</div>
+<div class="ion-padding"></div>
+<div class="ion-padding"></div>
+
+</ion-content>

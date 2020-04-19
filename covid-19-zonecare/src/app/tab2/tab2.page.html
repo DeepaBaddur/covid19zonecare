@@ -1,0 +1,197 @@
+<ion-header [translucent]="true" *ngIf="platform.is('mobile')">
+  <ion-toolbar>
+    <ion-title>
+      dashboard
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <h5 class="ion-padding-start" >Search with zipcode or location </h5>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size-xs="12" size-sm="12" size-md="5" size-lg="5">
+        <ion-searchbar showCancelButton="focus" class="ios" placeholder="Enter the PinCode" [ngModel]="pincode"  (ionChange)="onInput($event)"  (ionInput)="onValid($event)" type="number"> </ion-searchbar>
+        <p style="color: red;" *ngIf="!isvalid">Invalid Pincode</p>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="12" size-md="5" size-lg="5" *ngIf="isWardAvail">
+        <ion-item class="dropdown">
+          <ion-label>Select Ward</ion-label>
+          <!-- <ion-select value="Ward 1" okText="Ok" cancelText="Cancel">
+            <ion-select-option value="Ward 1">Ward 1</ion-select-option>
+            <ion-select-option value="Ward 2">Ward 2</ion-select-option>
+            <ion-select-option value="Ward 3">Ward 3</ion-select-option>
+            <ion-select-option value="Ward 4">Ward 4</ion-select-option>
+          </ion-select> -->
+          <ion-select (ionChange)="selectWard($event)">
+            <ion-select-option *ngFor="let item of countdata">{{item.ward}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="12" size-md="2" size-lg="2">
+        <ion-button expand="block" class="ww-b" (click)="getwardlist()">Search</ion-button>
+
+
+
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+  <h5 class="ion-padding" *ngIf="noDatafound">No Record Found</h5>
+
+  <ion-card *ngIf="wardDetails">
+    <ion-card-header>
+
+      <ion-card-title class="ion-text-center">{{selectWardVal}}
+       
+      </ion-card-title>
+      <div style="    text-align: center; margin-top: 13px;" *ngIf="wardDetails.active > 10"> 
+        <ion-badge color="danger" slot="end" style="padding: 5px;">RED ALERT ZONE</ion-badge>
+
+      </div>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-grid class="ion-text-center">
+        <ion-row>
+          <ion-col>
+            <ion-chip color="primary">
+              <ion-label>Active Cases : <b>{{wardDetails.active}}</b></ion-label>
+            </ion-chip>
+          </ion-col>
+          <ion-col>
+            <ion-chip color="success">
+              <ion-label>Recovered : <b>{{wardDetails.recovered}}</b></ion-label>
+            </ion-chip>
+          </ion-col>
+
+        </ion-row>
+        <ion-row class="ion-text-center">
+          <ion-col>
+            <ion-chip color="secondary">
+              <ion-label>Quarantine Cases : <b>{{wardDetails.quarantine}}</b></ion-label>
+            </ion-chip>
+          </ion-col>
+          <ion-col>
+            <ion-chip color="danger">
+              <ion-label>Deaths : <b>{{wardDetails.deceased}}</b></ion-label>
+            </ion-chip>
+          </ion-col>
+
+
+        </ion-row>
+      </ion-grid>
+      <ion-item-divider>
+        <ion-label color="danger">
+          <b>Healthcare HelpLine </b>
+        </ion-label>
+      </ion-item-divider>
+      <ion-item>
+
+        <ion-label>
+          <b>Rajiv Gandhi Hospital</b>
+        </ion-label>
+        <ion-icon name="medkit-outline" slot="start"></ion-icon>
+      </ion-item>
+      <ion-item>
+
+        <ion-label>
+          <b>+91 985-232-2323</b>
+        </ion-label>
+        <ion-icon name="call-outline" slot="start"></ion-icon>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <!-- <h4 class="ion-padding">
+    General Physicians
+  </h4>
+  <ion-card *ngFor="let list of lists">
+    <ion-list>
+      
+  
+      <ion-item-divider>
+        <ion-label class="f19" color="dark" >
+          <b>{{list.name}}</b>
+        </ion-label>
+      </ion-item-divider>
+      <ion-item lines="none">
+  
+        <ion-label>
+          {{list.contact}}
+        </ion-label>
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+      </ion-item>
+      <ion-item lines="none">
+  
+        <ion-label>
+         <a href="tel:1234567891">{{list.phone}}</a> 
+        </ion-label>
+        <ion-icon name="call-outline" slot="start"></ion-icon>
+      </ion-item>
+    </ion-list>
+    </ion-card> -->
+    <div class="ion-padding"></div>
+    <div class="ion-padding"></div>
+    <div class="ion-padding"></div>
+ <!-- ==================================================================================== -->
+  <!-- <ion-card>
+    <ion-card-header>
+
+      <ion-card-title class="ion-text-center">Ward 2 </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-grid class="ion-text-center">
+        <ion-row>
+          <ion-col>
+            <ion-chip color="primary">
+              <ion-label>Total Cases : <b>83</b></ion-label>
+            </ion-chip>
+          </ion-col>
+          <ion-col>
+            <ion-chip color="success">
+              <ion-label>Recovered : <b>43</b></ion-label>
+            </ion-chip>
+          </ion-col>
+
+        </ion-row>
+        <ion-row class="ion-text-center">
+          <ion-col>
+            <ion-chip color="primary">
+              <ion-label>Active Cases : <b>11</b></ion-label>
+            </ion-chip>
+          </ion-col>
+          <ion-col>
+            <ion-chip color="danger">
+              <ion-label>Deaths : <b>0</b></ion-label>
+            </ion-chip>
+          </ion-col>
+
+
+        </ion-row>
+      </ion-grid>
+      <ion-item-divider>
+        <ion-label color="danger">
+          <b>Healthcare HelpLine </b>
+        </ion-label>
+      </ion-item-divider>
+      <ion-item>
+
+        <ion-label>
+          <b>Rajaji Hospital</b>
+        </ion-label>
+        <ion-icon name="medkit-outline" slot="start"></ion-icon>
+      </ion-item>
+      <ion-item>
+
+        <ion-label>
+          <b>+91 765-232-4564</b>
+        </ion-label>
+        <ion-icon name="call-outline" slot="start"></ion-icon>
+      </ion-item>
+    </ion-card-content>
+  </ion-card> -->
+</ion-content>
