@@ -10,4 +10,6 @@ applications:
   health-check-type: none
   env:    
         IBM_LIBERTY_LICENSE: L-MCAO-9SYMVC    
+        JAVA_HOME: .java-buildpack/open_jdk_jre/bin/
         JVM: openjdk 
+        
